@@ -23,34 +23,7 @@ export default SigninScreen = ({navigation}) => {
 
   const udid = '864e4b6956f54267';
 
-  // const token1= key;
-
-  // const Signin=()=>{
-  //   try{
-  //        axios.post('https://test.touchapp.in/auth/login',{
-  //           "mobile":mobile,
-  //           "password":password,
-  //           "fcm_token":fcmToken,
-  //           "udid":udid
-  //       },{
-  //         //   headers:{'Content-Type':'apllication/json'}
-  //       })
-
-  //       .then(data=>setKey(data.data.data.token));
-
-  //   storeData(key);
-  //       // console.log( "tokennnn : ",key);
-  //       if(key != ""){
-  //         // console.log(key);
-  //         navigation.navigate('MyTabs');
-  //       }
-
-  //   }
-  //   catch(error){
-  //       console.log(error);
-  //   }
-  // }
-  // console.log(token);
+  
 
   const Signin = async () => {
     try {
@@ -215,4 +188,3 @@ const styles = StyleSheet.create({
   },
 });
 
-//https://firebase.google.com/docs/auth/web/phone-auth

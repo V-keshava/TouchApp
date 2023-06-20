@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
-import auth from '@react-native-firebase/auth';
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {Button, Image} from '@rneui/themed';
 import axios from 'react-native-axios';
@@ -22,34 +22,7 @@ export default ConfirmOTP = ({navigation}) => {
   const udid = '864e4b6956f54267';
 
   const verify = async () => {
-    // try {
-    
-      
-        // await axios
-        //   .post('https://test.touchapp.in/auth/verifyOtp', {'otp': "184272"})
-        //   .then(response => {
-        //     if(response.ok == true){
-        //         Alert.alert('otp verified')
-        //     }else{
-        //         Alert.alert('invalid otp')
-        //     }
-        //     // navigation.navigate('Signin');
-        //   });
-        // }
-
-    //     await fetch('https://test.touchapp.in/auth/verifyOtp',{
-    //         "otp":code
-    //     },{
-    //         Headers:{'Content-Type':'text/plain'}
-    //     })
-    //     // .then((data)=>data.json())
-    //     .then((response)=>console.log(response))
-    //     navigation.navigate('Signin')
-      
-    // } catch (err) {
-    //   Alert.alert('OTP varification failed');
-    //   console.log(err);
-    // }
+   
     
     const api = 'https://test.touchapp.in/auth/verifyOtp';
     try {

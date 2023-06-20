@@ -67,24 +67,6 @@ export default RegisterScreen = ({navigation}) => {
   };
 
   let fetchData = async () => {
-    // DeviceInfo.getAndroidId().then(deviceId => {
-    //   console.log(deviceId);
-    //   setUdid(deviceId);
-    // });
-    // async function requestPermissionAndToken() {
-    //   const authStatus = await messaging().requestPermission();
-
-    //   if (authStatus === messaging.AuthorizationStatus.AUTHORIZED) {
-    //     const fcmToken = await messaging().getToken();
-    //     console.log('fcm Token: ', fcmToken);
-    //     setFcmToken(fcmToken);
-    //   }
-    // }
-    // requestPermissionAndToken();
-    // messaging().onTokenRefresh(newToken => {
-    //   console.log('FCM Token Refreshed:', newToken);
-    // });
-
     try {
       let formData = new FormData();
       formData.append('mobile', mobile);
@@ -112,13 +94,6 @@ export default RegisterScreen = ({navigation}) => {
       });
       console.log('keshav 2nd then');
     } catch (error) {
-      //   await axios
-      //   .post('https://test.touchapp.in/auth/register', formData, {
-      //     headers: {'Content-Type': 'multipart/form-data'},
-      //   })
-      //   .then(response => console.log(response))
-      //   navigation.navigate('Verify OTP')
-      //  }
       console.log(error);
     }
   };
@@ -170,7 +145,6 @@ export default RegisterScreen = ({navigation}) => {
               />
               <Input
                 placeholder="Mobile No"
-                // type="Mobile"
                 autoFocus
                 onChangeText={setMobile}
                 value={mobile}
@@ -279,10 +253,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // marginTop: 30,
   },
   container: {
-    // height: '70%',
     width: 350,
     backgroundColor: 'rgba(240, 240, 240, 0.5)',
 
@@ -298,7 +270,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'flex-end',
     color: 'white',
-    // marginTop: -50,
   },
   input: {
     width: 250,

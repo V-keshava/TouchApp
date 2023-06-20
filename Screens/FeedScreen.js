@@ -27,7 +27,7 @@ export default FeedScreen =({navigation})=>{
                 <Image source={require('../assests/logo.png')} style={{width:150, height:35}} />
                 <MaterialCommunityIcons name="bell" size={30} style={{color:'white'}} onPress={GetFeeds} />
             </View>
-            {/* <GetFeeds /> */}
+            
         </View>
     )
 }

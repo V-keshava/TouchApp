@@ -14,7 +14,6 @@ import * as ImagePicker from 'react-native-image-picker';
 import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import AntDesignIcons1 from 'react-native-vector-icons/FontAwesome';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
-// import { useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Video from 'react-native-video';
 export default Post = () => {
@@ -33,7 +32,6 @@ export default Post = () => {
       },
     };
     ImagePicker.launchCamera(options, res => {
-      // console.log('Response = ', res);
       if (res.didCancel) {
         console.log('User cancelled image picker');
         // console.log(photos);
@@ -57,15 +55,13 @@ export default Post = () => {
       mediaType: 'Mixed',
       durationLimit: 60,
       videoQuality: 'low',
-      // maxWidth: 2000,
-      // maxHeight: 2000,
+
       storageOptions: {
         skipBackup: true,
         path: 'images',
       },
     };
     ImagePicker.launchImageLibrary(options, response => {
-      // console.log("kjwndfksnjdf     ",response);
       if (response.didCancel) {
         console.log('User cancelled image picker');
         console.log(pics);
@@ -84,23 +80,6 @@ export default Post = () => {
           setThumbnail(videoSource);
           console.log('video');
         }
-
-        // console.log("file type:   ",response.assets[0].type);
-        // if(response.assets.type=='image/jpeg'){
-        //   setImage("")
-        // const source = {uri: response.assets[0].uri};
-        // console.log("image file :  ",source.uri);
-        // setImage(source);
-        // console.log("image");
-        // }
-        // else if(response.assets.type == 'video/mp4'){
-        //   setImage('')
-        //   const videoSource = {uri: response.assets[0].uri};
-        //   console.log(videoSource);
-        //   setThumbnail(videoSource);
-        //   setVideo(videoSource);
-        //   console.log("video");
-        // }
       }
     });
   };
@@ -115,13 +94,10 @@ export default Post = () => {
     try {
       var value = await AsyncStorage.getItem('@storage_Key');
       if (value !== null) {
-        // value previously stored
         console.log('got token     :', value);
         setTkn(value);
       }
-    } catch (e) {
-      // error reading value
-    }
+    } catch (e) {}
   };
 
   const hasPermission = async () => {
@@ -145,9 +121,8 @@ export default Post = () => {
     })
 
       .then(response => {
-        // console.log(JSON.stringify(response.edges));
         setPics(response.edges);
-        // setPhotos(JSON.stringify(response.edges[0].node.image.uri));
+
         setImage(response.edges[0].node.image);
       })
 
@@ -159,7 +134,7 @@ export default Post = () => {
   const createPost = async () => {
     var myHeaders = new Headers();
     myHeaders.append('Authorization', `Bearer ${tkn}`);
-    // "Bearer" + " " + tkn
+
     var formData = new FormData();
     formData.append('post_file', {
       uri: video.uri,
@@ -180,23 +155,6 @@ export default Post = () => {
       redirect: 'follow',
     };
 
-    // var myHeaders = new Headers();
-    // myHeaders.append('Authorization', `Bearer ${tkn}`);
-    // // "Bearer" + " " + tkn
-    // var formData = new FormData();
-    // formData.append('post_file', {
-    //   uri: image.uri,
-    //   type: 'image/jpeg',
-    //   name: 'image.jpg',
-    // });
-    // formData.append('post_type', 'image');
-
-    // var requestOptions ={
-    //   method:'POST',
-    //   headers:myHeaders,
-    //   body:formData,
-    // }
-
     await fetch('https://test.touchapp.in/api/createPost', requestOptions)
       .then(data => data.json())
       .then(res => console.log(res))
@@ -207,26 +165,17 @@ export default Post = () => {
     <View style={{flex: 1}}>
       <View style={{height: '70%'}}>
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          {/* {image ? (
-            <Image source={image} style={{width: '100%', height: '100%'}} />
-          ) : (
-            <Image
-              source={require('../assests/person.png')}
-              style={{width: '100%', height: '100%'}}
-            />
-          )} */}
           {image && (
             <Image source={image} style={{width: '100%', height: '100%'}} />
           )}
           {video && (
             <Video source={video} style={{width: '100%', height: '100%'}} />
           )}
-          {/* <Image source={image} style={{width: '100%', height: '100%'}} /> */}
         </View>
         <View
           style={{
             flexDirection: 'row',
-            //   justifyContent: 'space-evenly',
+
             marginTop: 0,
             backgroundColor: 'aqua',
           }}>
@@ -256,8 +205,7 @@ export default Post = () => {
                 style={{
                   width: Dimensions.get('window').width / 2 - 100,
                   height: 150,
-                  // margin: 5,
-                  // borderRadius: 5,
+
                   marginLeft: 25,
                 }}>
                 <TouchableOpacity>
@@ -270,7 +218,6 @@ export default Post = () => {
             );
           }}
         />
-        {/* <GetAllPhotos /> */}
       </View>
       <TouchableOpacity
         onPress={createPost}
