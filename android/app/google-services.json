@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "639885646982",
+    "project_id": "touch-3a39e",
+    "storage_bucket": "touch-3a39e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639885646982:android:f007997cf56f2526a1c507",
+        "android_client_info": {
+          "package_name": "com.touch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639885646982-d5ur4t7vq2pmf17spu8vdkf7kn7sgs4l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.touch",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "639885646982-ihcbbsofaa9c3n2j9h91jbca1m4cnrq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzX7TwB2WR0_m02x5B0zfJPiZhDk5Ph-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639885646982-ihcbbsofaa9c3n2j9h91jbca1m4cnrq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
